@@ -1,0 +1,127 @@
+# ==============================
+# Python
+# ==============================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ==============================
+# Jupyter Notebook
+# ==============================
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Jupyter temporary files
+*.ipynb_checkpoints
+
+# ==============================
+# Data
+# ==============================
+
+# Raw and processed datasets
+ai-ml/data/raw/
+ai-ml/data/processed/
+
+# Large generated datasets
+*.csv
+*.tsv
+*.parquet
+*.zip
+
+# ==============================
+# Machine Learning Outputs
+# ==============================
+
+# Generated outputs
+ai-ml/outputs/
+
+# Trained model files
+*.h5
+*.hdf5
+*.keras
+*.pkl
+*.pickle
+*.joblib
+*.ckpt
+*.pt
+*.pth
+*.onnx
+
+# TensorFlow checkpoints
+checkpoint
+*.index
+*.data-00000-of-00001
+
+# ==============================
+# Frontend
+# ==============================
+
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# ==============================
+# Environment / Secrets
+# ==============================
+
+.env
+.env.*
+!.env.example
+
+# ==============================
+# Logs
+# ==============================
+
+*.log
+logs/
+
+# ==============================
+# VS Code
+# ==============================
+
+.vscode/
+!.vscode/extensions.json
+
+# ==============================
+# macOS
+# ==============================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS temporary files
+._*
+
+# ==============================
+# Windows
+# ==============================
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ==============================
+# Temporary files
+# ==============================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak

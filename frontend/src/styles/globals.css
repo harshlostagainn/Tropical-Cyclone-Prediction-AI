@@ -3,7 +3,86 @@
 @tailwind utilities;
 
 body {
-  background-color: #0d1117;
+  background-color: #020612;
   color: #e6edf3;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Rising Ocean Evaporation Bubbles Animation */
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0.3);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(45vh) translateX(8px) scale(0.8);
+  }
+  85% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(-6px) scale(1.1);
+    opacity: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  background: radial-gradient(circle at 30% 30%, rgba(103, 232, 249, 0.95), rgba(6, 182, 212, 0.15));
+  border: 1px solid rgba(103, 232, 249, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.55), 0 0 4px rgba(255, 255, 255, 0.4) inset;
+  pointer-events: none;
+  animation-name: float-up;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  mix-blend-mode: screen;
+}
+
+/* Underwater caustics — light refraction pattern moving through water */
+@keyframes caustics-drift {
+  0% {
+    background-position: 0% 0%, 0% 0%;
+  }
+  50% {
+    background-position: 100% 50%, -60% 40%;
+  }
+  100% {
+    background-position: 0% 0%, 0% 0%;
+  }
+}
+
+.caustics {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+  mix-blend-mode: soft-light;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(103, 232, 249, 0.5), transparent 60%),
+    radial-gradient(ellipse 50% 35% at 80% 65%, rgba(56, 189, 248, 0.4), transparent 60%);
+  background-size: 200% 200%, 220% 220%;
+  animation: caustics-drift 18s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+/* Faint water-surface shimmer band at top */
+@keyframes shimmer-slide {
+  0% { transform: translateX(-30%); }
+  100% { transform: translateX(30%); }
+}
+
+.shimmer-band {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  background: linear-gradient(120deg, transparent 20%, rgba(125, 211, 252, 0.12) 45%, transparent 70%);
+  animation: shimmer-slide 9s ease-in-out infinite alternate;
+  pointer-events: none;
 }
